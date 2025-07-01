@@ -3,16 +3,14 @@ import time
 
 def calculadora(num1: float, num2: float, operador: str) -> float:
     """
-    Usar nan como valor inicial é uma boa prática. 
-    Se o operador fornecido não corresponder a nenhuma das opções válidas (+, -, etc.), a função retornará nan, 
-    sinalizando que o cálculo não pôde ser realizado.
+    Função que realiza operações básicas. Retorna NaN se o operador for inválido.
     """
     result = float("nan")
     if operador == '+':
         result = num1 + num2
     elif operador == '-':
         result = num1 - num2
-elif operador == '*':
+    elif operador == '*':
         result = num1 * num2
     elif operador == '/':
         if num2 != 0:
@@ -25,7 +23,7 @@ elif operador == '*':
 
 
 if __name__ == "__main__":
- while True:
+    while True:
         os.system('cls' if os.name == 'nt' else 'clear')
         try:
             print('Calculadora')
@@ -38,11 +36,12 @@ if __name__ == "__main__":
 
             resultado = calculadora(num1, num2, operador)
             
-  if resultado != resultado:  
+            if resultado != resultado:  # verifica se é NaN
                 print("\nOperação inválida!")
             else:
                 print(f"\nResultado: {resultado}")
-except ValueError:
+
+        except ValueError:
             print('\nDados inválidos! -> Tente novamente!')
             time.sleep(2)
             continue
@@ -57,5 +56,3 @@ except ValueError:
             break
 
     print('\nVolte sempre!\n')
-
-  
