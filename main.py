@@ -42,14 +42,20 @@ if __name__ == "__main__":
                 print("\nOperação inválida!")
             else:
                 print(f"\nResultado: {resultado}")
-
-
-        except ValueError:
-            print('Dados inválidos! -> Tente novamente!')
+except ValueError:
+            print('\nDados inválidos! -> Tente novamente!')
             time.sleep(2)
+            continue
 
         except ZeroDivisionError:
-            print('Impossível dividir por zero! -> Tente novamente!')
+            print('\nImpossível dividir por zero! -> Tente novamente!')
             time.sleep(2)
+            continue
+
+        opcao = input("\nDeseja fazer outra operação? (s/n): ").lower()
+        if opcao != 's':
+            break
 
     print('\nVolte sempre!\n')
+
+  
