@@ -25,12 +25,23 @@ elif operador == '*':
 
 
 if __name__ == "__main__":
-
-    while True:
+ while True:
         os.system('cls' if os.name == 'nt' else 'clear')
         try:
             print('Calculadora')
             print('----------------------------------\n')
+            
+            num1 = float(input("Digite o primeiro número: "))
+            num2 = float(input("Digite o segundo número: "))
+            print("Operações disponíveis: +  -  *  /  **")
+            operador = input("Escolha a operação: ")
+
+            resultado = calculadora(num1, num2, operador)
+            
+  if resultado != resultado:  
+                print("\nOperação inválida!")
+            else:
+                print(f"\nResultado: {resultado}")
 
 
         except ValueError:
